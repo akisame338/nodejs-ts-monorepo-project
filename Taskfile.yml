@@ -1,0 +1,19 @@
+version: '3'
+
+tasks:
+  default:
+    desc: show commands
+    cmds:
+      - task -l --sort none
+  build:
+    desc: build docker image
+    cmds:
+      - docker compose build
+  build-no-cache:
+    desc: build docker image (no cache)
+    cmds:
+      - docker compose build --no-cache
+  bash:
+    desc: enter `app` container
+    cmds:
+      - docker compose run --rm --no-deps app bash
