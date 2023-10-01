@@ -8,4 +8,8 @@ RUN mkdir -p ${APP_ROOT} && \
 
 USER node
 
+COPY --chown=node:node package.json .
+COPY --chown=node:node package-lock.json .
+RUN npm install
+
 COPY --chown=node:node . .
