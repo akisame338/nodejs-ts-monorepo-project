@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "dev": "npm run server:dev",
+    "dev": "concurrently 'npm run client:dev' 'npm run server:dev'",
+    "client:dev": "vite --host",
     "server:dev": "nodemon --watch src/server --ext ts --exec 'ts-node --project tsconfig.server.json src/server/app'"
   },
   "dependencies": {
