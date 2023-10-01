@@ -7,3 +7,8 @@ services:
       dockerfile: docker/app/Dockerfile
     volumes:
       - .:/app
+    env_file:
+      - .env
+    ports:
+      - '3030:3030'
+    command: npm run dev
